@@ -8,9 +8,16 @@ public class Main {
         checkMoney(Oleksandr);
         checkMoney(Pasha);
         checkMoney(Vova);
+        transfer(Timur, Vova, 200);
+        checkMoney(Timur);
+        checkMoney(Vova);
     }
 
     public static void checkMoney(User user){
         System.out.println("На рахунку у " + user.firstName + ": " + user.money + " стільки грошей.");
+    }
+    public static void transfer(User fromUser, User toUser, double countOfMoney){
+        toUser.money = toUser.money+countOfMoney;
+        fromUser.money = toUser.money-countOfMoney;
     }
 }
